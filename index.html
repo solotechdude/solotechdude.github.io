@@ -88,6 +88,11 @@
       z-index: 100;
     }
 
+    .skip:focus-visible {
+      color: var(--bg);
+      background-image: none;
+    }
+
     a {
       color: var(--ink);
       text-decoration: none;
@@ -167,6 +172,66 @@
       margin: 0;
       color: var(--ink);
     }
+
+    .exp {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .exp li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .exp li:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .org {
+      font-family: Syne, sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .contact-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .contact-links li + li {
+      margin-top: 0.75rem;
+    }
+
+    .contact-links a {
+      display: inline-block;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .fine {
+      margin: 2rem 0 0;
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .fine code {
+      font-family: "IBM Plex Sans", monospace;
+      font-size: 0.875em;
+    }
   </style>
 </head>
 <body>
@@ -188,10 +253,24 @@
       </p>
     </section>
     <section id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
+      <h2 id="experience-title">Selected experience</h2>
+      <ul class="exp">
+        <li><span class="org">JPMorgan Chase</span><span class="role">Engineering</span></li>
+        <li><span class="org">FCC</span><span class="role">Engineering</span></li>
+        <li><span class="org">Walmart Labs</span><span class="role">Engineering</span></li>
+        <li><span class="org">College Board</span><span class="role">Engineering</span></li>
+        <li><span class="org">Comcast</span><span class="role">Engineering</span></li>
+        <li><span class="org">AEP</span><span class="role">Engineering</span></li>
+      </ul>
     </section>
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
+      <ul class="contact-links">
+        <li><a href="mailto:hello@solotechdude.com">hello@solotechdude.com</a></li>
+        <li><a href="https://github.com/solotechdude" rel="noopener noreferrer">github.com/solotechdude</a></li>
+        <li><a href="https://www.linkedin.com/in/solotechdude" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+      <p class="fine">Replace email / LinkedIn URLs in <code>index.html</code> with your real contacts.</p>
     </section>
   </main>
   <footer></footer>
