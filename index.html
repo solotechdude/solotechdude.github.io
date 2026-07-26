@@ -23,7 +23,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
 
     body {
@@ -72,6 +72,11 @@
       z-index: 1;
     }
 
+    ::selection {
+      background: rgba(61, 224, 197, 0.22);
+      color: var(--ink);
+    }
+
     .skip {
       position: absolute;
       left: -9999px;
@@ -96,17 +101,51 @@
     a {
       color: var(--ink);
       text-decoration: none;
-      background-image: linear-gradient(var(--accent), var(--accent));
-      background-size: 0% 1px;
-      background-repeat: no-repeat;
-      background-position: 0 100%;
-      transition: color 0.2s ease, background-size 0.25s ease;
     }
 
-    a:hover,
-    a:focus-visible {
-      color: var(--accent);
-      background-size: 100% 1px;
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(1.25rem);
+        animation: rise 0.8s ease forwards;
+      }
+
+      .hero { animation-delay: 0.05s; }
+      #now { animation-delay: 0.18s; }
+      #experience { animation-delay: 0.3s; }
+      #contact { animation-delay: 0.42s; }
+
+      @keyframes rise {
+        to { opacity: 1; transform: none; }
+      }
+
+      a {
+        background-image: linear-gradient(var(--accent), var(--accent));
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 1px;
+        transition: background-size 0.25s ease, color 0.2s ease;
+      }
+
+      a:hover,
+      a:focus-visible {
+        color: var(--accent);
+        background-size: 100% 1px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; }
+
+      a:hover,
+      a:focus-visible {
+        color: var(--accent);
+        text-decoration: underline;
+      }
     }
 
     .hero {
@@ -232,11 +271,15 @@
       font-family: "IBM Plex Sans", monospace;
       font-size: 0.875em;
     }
+
+    #contact {
+      padding-bottom: max(6rem, min(20vh, 8rem));
+    }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="hero" aria-label="Intro">
+  <header class="hero reveal" aria-label="Intro">
     <p class="label">Solopreneur · Builder</p>
     <h1 class="brand">solotechdude</h1>
     <p class="lede">
@@ -245,14 +288,14 @@
     <p class="cta"><a href="#contact">Contact</a></p>
   </header>
   <main id="main">
-    <section id="now" aria-labelledby="now-title">
+    <section id="now" class="reveal" aria-labelledby="now-title">
       <h2 id="now-title">Now</h2>
       <p>
         Developing independent products and tools — trucking operations,
         government contracting workflows, and focused utilities for teams that ship.
       </p>
     </section>
-    <section id="experience" aria-labelledby="experience-title">
+    <section id="experience" class="reveal" aria-labelledby="experience-title">
       <h2 id="experience-title">Selected experience</h2>
       <ul class="exp">
         <li><span class="org">JPMorgan Chase</span><span class="role">Engineering</span></li>
@@ -263,7 +306,7 @@
         <li><span class="org">AEP</span><span class="role">Engineering</span></li>
       </ul>
     </section>
-    <section id="contact" aria-labelledby="contact-title">
+    <section id="contact" class="reveal" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <ul class="contact-links">
         <li><a href="mailto:hello@solotechdude.com">hello@solotechdude.com</a></li>
@@ -273,6 +316,5 @@
       <p class="fine">Replace email / LinkedIn URLs in <code>index.html</code> with your real contacts.</p>
     </section>
   </main>
-  <footer></footer>
 </body>
 </html>
