@@ -14,14 +14,178 @@
       --accent: #3de0c5;
       --rule: rgba(242, 242, 240, 0.12);
     }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      border-radius: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 79px,
+          rgba(242, 242, 240, 0.03) 79px,
+          rgba(242, 242, 240, 0.03) 80px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 79px,
+          rgba(242, 242, 240, 0.03) 79px,
+          rgba(242, 242, 240, 0.03) 80px
+        ),
+        repeating-linear-gradient(
+          135deg,
+          transparent,
+          transparent 2px,
+          rgba(242, 242, 240, 0.012) 2px,
+          rgba(242, 242, 240, 0.012) 3px
+        );
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      padding: 0.75rem 1rem;
+      background: var(--ink);
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .skip:focus {
+      left: 0;
+      z-index: 100;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      background-image: linear-gradient(var(--accent), var(--accent));
+      background-size: 0% 1px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      transition: color 0.2s ease, background-size 0.25s ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent);
+      background-size: 100% 1px;
+    }
+
+    .hero {
+      padding: min(20vh, 8rem) clamp(1.25rem, 5vw, 3rem);
+      border-bottom: 1px solid var(--rule);
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .label {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+    }
+
+    .brand {
+      font-family: Syne, sans-serif;
+      font-size: clamp(4rem, 12vw, 8rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      font-weight: 800;
+      margin: 0 0 1.75rem;
+      max-width: 100%;
+    }
+
+    .lede {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+      max-width: 36ch;
+      margin: 0 0 2.5rem;
+    }
+
+    .cta {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    main section {
+      padding: min(20vh, 8rem) clamp(1.25rem, 5vw, 3rem);
+    }
+
+    main section h2 {
+      font-family: Syne, sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+    }
+
+    #now p {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 1.0625rem;
+      max-width: 52ch;
+      margin: 0;
+      color: var(--ink);
+    }
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <header class="hero" aria-label="Intro"></header>
+  <header class="hero" aria-label="Intro">
+    <p class="label">Solopreneur · Builder</p>
+    <h1 class="brand">solotechdude</h1>
+    <p class="lede">
+      Building products and tools for trucking, government contracting, and operators.
+    </p>
+    <p class="cta"><a href="#contact">Contact</a></p>
+  </header>
   <main id="main">
     <section id="now" aria-labelledby="now-title">
       <h2 id="now-title">Now</h2>
+      <p>
+        Developing independent products and tools — trucking operations,
+        government contracting workflows, and focused utilities for teams that ship.
+      </p>
     </section>
     <section id="experience" aria-labelledby="experience-title">
       <h2 id="experience-title">Experience</h2>
