@@ -98,6 +98,24 @@
       background-image: none;
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .layout {
+      max-width: 1100px;
+      margin-inline: auto;
+      width: 100%;
+    }
+
     a {
       color: var(--ink);
       text-decoration: none;
@@ -196,7 +214,7 @@
 
     main section h2 {
       font-family: Syne, sans-serif;
-      font-size: 1.25rem;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
@@ -280,40 +298,48 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="hero reveal" aria-label="Intro">
-    <p class="label">Solopreneur · Builder</p>
-    <h1 class="brand">solotechdude</h1>
-    <p class="lede">
-      Building products and tools for trucking, government contracting, and operators.
-    </p>
-    <p class="cta"><a href="#contact">Contact</a></p>
+    <div class="layout">
+      <p class="label">Solopreneur · Builder</p>
+      <h1 class="brand">solotechdude</h1>
+      <p class="lede">
+        Building products and tools for trucking, government contracting, and operators.
+      </p>
+      <p class="cta"><a href="#contact">Contact</a></p>
+    </div>
   </header>
   <main id="main">
     <section id="now" class="reveal" aria-labelledby="now-title">
-      <h2 id="now-title">Now</h2>
-      <p>
-        Developing independent products and tools — trucking operations,
-        government contracting workflows, and focused utilities for teams that ship.
-      </p>
+      <div class="layout">
+        <h2 id="now-title">Now</h2>
+        <p>
+          Developing independent products and tools — trucking operations,
+          government contracting workflows, and focused utilities for teams that ship.
+        </p>
+      </div>
     </section>
     <section id="experience" class="reveal" aria-labelledby="experience-title">
-      <h2 id="experience-title">Selected experience</h2>
-      <ul class="exp">
-        <li><span class="org">JPMorgan Chase</span><span class="role">Engineering</span></li>
-        <li><span class="org">FCC</span><span class="role">Engineering</span></li>
-        <li><span class="org">Walmart Labs</span><span class="role">Engineering</span></li>
-        <li><span class="org">College Board</span><span class="role">Engineering</span></li>
-        <li><span class="org">Comcast</span><span class="role">Engineering</span></li>
-        <li><span class="org">AEP</span><span class="role">Engineering</span></li>
-      </ul>
+      <div class="layout">
+        <h2 id="experience-title">Selected experience</h2>
+        <ul class="exp">
+          <li><span class="org">JPMorgan Chase</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
+          <li><span class="org">FCC</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
+          <li><span class="org">Walmart Labs</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
+          <li><span class="org">College Board</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
+          <li><span class="org">Comcast</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
+          <li><span class="org">AEP</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
+        </ul>
+      </div>
     </section>
     <section id="contact" class="reveal" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <ul class="contact-links">
-        <li><a href="mailto:hello@solotechdude.com">hello@solotechdude.com</a></li>
-        <li><a href="https://github.com/solotechdude" rel="noopener noreferrer">github.com/solotechdude</a></li>
-        <li><a href="https://www.linkedin.com/in/solotechdude" rel="noopener noreferrer">LinkedIn</a></li>
-      </ul>
-      <p class="fine">Replace email / LinkedIn URLs in <code>index.html</code> with your real contacts.</p>
+      <div class="layout">
+        <h2 id="contact-title">Contact</h2>
+        <ul class="contact-links">
+          <li><a href="mailto:hello@solotechdude.com">hello@solotechdude.com</a></li>
+          <li><a href="https://github.com/solotechdude" rel="noopener noreferrer">github.com/solotechdude</a></li>
+          <li><a href="https://www.linkedin.com/in/solotechdude" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+        <p class="fine">Replace email / LinkedIn URLs in <code>index.html</code> with your real contacts.</p>
+      </div>
     </section>
   </main>
 </body>
