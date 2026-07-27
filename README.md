@@ -18,13 +18,10 @@ Live: **https://solotechdude.github.io**
 │       ├── logo.png
 │       ├── logo-512.png
 │       └── favicon-32.png
-├── creatives/
-│   ├── x-headers/          # X / Twitter header exports (versioned)
-│   └── qr/                 # Business-card QR codes → this site
 └── docs/                   # Notes / plans (not deployed content)
 ```
 
-Site-critical files stay at the repo root for GitHub Pages. Brand artwork and marketing exports live under `assets/` and `creatives/`.
+Site-critical files stay at the repo root for GitHub Pages. Marketing exports (`creatives/` — X headers, QR codes) stay on your machine only and are gitignored.
 
 ## Edit copy
 

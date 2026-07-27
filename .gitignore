@@ -1,3 +1,6 @@
 .worktrees/
 .DS_Store
 Thumbs.db
+
+# Local-only marketing exports (not published with the site)
+creatives/
