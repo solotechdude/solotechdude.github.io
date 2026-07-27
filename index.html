@@ -201,12 +201,15 @@
 
     .mark {
       display: block;
-      width: clamp(2.75rem, 9vw, 4.5rem);
-      aspect-ratio: 544 / 819;
+      width: clamp(3rem, 10vw, 5rem);
+      height: auto;
       margin: 0 0 1.5rem;
-      background-color: var(--ink);
-      -webkit-mask: url("logo.png") center / contain no-repeat;
-      mask: url("logo.png") center / contain no-repeat;
+    }
+
+    .mark img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .brand {
@@ -329,7 +332,9 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="hero reveal" aria-label="Intro">
     <div class="layout">
-      <span class="mark" role="img" aria-label="solotechdude mark"></span>
+      <div class="mark" aria-hidden="true">
+        <img src="logo.png" alt="" width="544" height="819">
+      </div>
       <p class="label">Solopreneur · Builder</p>
       <h1 class="brand">solotechdude</h1>
       <p class="lede">
