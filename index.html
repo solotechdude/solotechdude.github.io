@@ -146,7 +146,7 @@
 
       .hero { animation-delay: 0.05s; }
       #now { animation-delay: 0.18s; }
-      #experience { animation-delay: 0.3s; }
+      #clients { animation-delay: 0.3s; }
       #contact { animation-delay: 0.42s; }
 
       @keyframes rise {
@@ -312,11 +312,6 @@
     }
 
     .exp li {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.35rem 1rem;
       padding: 1.25rem 0;
       border-top: 1px solid var(--rule);
       min-width: 0;
@@ -331,15 +326,7 @@
       font-size: clamp(1.15rem, 2.8vw, 2rem);
       font-weight: 700;
       letter-spacing: -0.02em;
-      min-width: 0;
       overflow-wrap: anywhere;
-    }
-
-    .role {
-      font-size: 0.9375rem;
-      color: var(--muted);
-      text-align: right;
-      flex: 0 0 auto;
     }
 
     .contact-links {
@@ -395,16 +382,16 @@
         </p>
       </div>
     </section>
-    <section id="experience" class="reveal" aria-labelledby="experience-title">
+    <section id="clients" class="reveal" aria-labelledby="clients-title">
       <div class="layout">
-        <h2 id="experience-title">Selected experience</h2>
+        <h2 id="clients-title">Clients</h2>
         <ul class="exp">
-          <li><span class="org">JPMorgan Chase</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
-          <li><span class="org">FCC</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
-          <li><span class="org">Walmart Labs</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
-          <li><span class="org">College Board</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
-          <li><span class="org">Comcast</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
-          <li><span class="org">AEP</span><span class="sr-only">, </span><span class="role">Engineering</span></li>
+          <li><span class="org">JPMorgan Chase</span></li>
+          <li><span class="org">Walmart Labs</span></li>
+          <li><span class="org">Comcast</span></li>
+          <li><span class="org">FCC</span></li>
+          <li><span class="org">College Board</span></li>
+          <li><span class="org">AEP</span></li>
         </ul>
       </div>
     </section>
