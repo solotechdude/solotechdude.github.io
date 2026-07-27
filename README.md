@@ -1,15 +1,15 @@
 # solotechdude
 
-Single-page personal brand and resume site for **solotechdude** — solopreneur building tools for trucking, government contracting, and operators.
+Single-page personal brand site for **solotechdude** — software and AI that cuts busywork.
 
 ## Edit copy
 
 All content lives in `index.html`. Search for company names, email, or URLs to update:
 
-- **Hero** — brand name, lede, and contact CTA
-- **Now** — current focus paragraph
-- **Selected experience** — company list (`JPMorgan Chase`, `FCC`, `Walmart Labs`, etc.)
-- **Contact** — `solotechdude@gmail.com` (hero CTA: Email me)
+- **Hero** — brand name, lede, and Email me CTA
+- **Products** — BestAmazonBooker, FactoRight, LockTheLoad (domains + Chrome Web Store)
+- **Clients** — contractor client list
+- **Contact** — `solotechdude@gmail.com`
 
 No build step required.
 

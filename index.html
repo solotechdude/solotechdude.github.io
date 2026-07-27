@@ -4,10 +4,86 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>solotechdude</title>
-  <meta name="description" content="Busywork is stealing your team's time. solotechdude builds software and AI that gets it done for you.">
+  <meta name="description" content="solotechdude builds Chrome extensions that cut trucking busywork — BestAmazonBooker, FactoRight, and LockTheLoad.">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Syne:wght@600;700;800&display=swap">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://solotechdude.github.io/#person",
+        "name": "solotechdude",
+        "url": "https://solotechdude.github.io/",
+        "email": "mailto:solotechdude@gmail.com",
+        "jobTitle": "Solopreneur",
+        "description": "Busywork is stealing your team's time. solotechdude builds software and AI that gets it done for you.",
+        "sameAs": [
+          "https://bestamazonbooker.lol",
+          "https://factoright.com",
+          "https://locktheload.com"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://solotechdude.github.io/#products",
+        "name": "Products by solotechdude",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "BestAmazonBooker",
+              "url": "https://bestamazonbooker.lol",
+              "applicationCategory": "BrowserApplication",
+              "operatingSystem": "Chrome",
+              "description": "Chrome extension for Amazon Relay load board automation — search, filter, and book loads without leaving Relay.",
+              "offers": {
+                "@type": "Offer",
+                "url": "https://chromewebstore.google.com/detail/bestamazonbooker/cjalmfjcjhpkldndjifbhebecelpbemm"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "FactoRight",
+              "url": "https://factoright.com",
+              "applicationCategory": "BrowserApplication",
+              "operatingSystem": "Chrome",
+              "description": "Chrome extension that shows broker factoring scores on DAT and TruckStop load boards so carriers can avoid payment risk.",
+              "offers": {
+                "@type": "Offer",
+                "url": "https://chromewebstore.google.com/detail/factoright/abpkbnjbcjffhdfiibkeodpcejlfpcki"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "LockTheLoad",
+              "url": "https://locktheload.com",
+              "applicationCategory": "BrowserApplication",
+              "operatingSystem": "Chrome",
+              "description": "Chrome extension load booking manager for DAT and TruckStop — negotiate, communicate, and book loads faster.",
+              "offers": {
+                "@type": "Offer",
+                "url": "https://chromewebstore.google.com/detail/locktheload-loads-booking/abfpabcljnjfonkbepfodpdembndjjnk"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #0c0e10;
@@ -145,7 +221,7 @@
       }
 
       .hero { animation-delay: 0.05s; }
-      #now { animation-delay: 0.18s; }
+      #products { animation-delay: 0.18s; }
       #clients { animation-delay: 0.3s; }
       #contact { animation-delay: 0.42s; }
 
@@ -297,12 +373,68 @@
       margin: 0 0 1.25rem;
     }
 
-    #now p {
+    .products-intro {
       font-family: "IBM Plex Sans", sans-serif;
       font-size: 1.0625rem;
-      max-width: 52ch;
-      margin: 0;
+      max-width: 48ch;
+      margin: 0 0 2rem;
       color: var(--ink);
+    }
+
+    .products {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .products > li {
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--rule);
+      min-width: 0;
+    }
+
+    .products > li:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .product-name {
+      font-family: Syne, sans-serif;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+      line-height: 1.2;
+    }
+
+    .product-name a {
+      color: var(--ink);
+    }
+
+    .product-desc {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 1.0625rem;
+      max-width: 48ch;
+      margin: 0 0 0.75rem;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    .product-meta {
+      margin: 0;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+    }
+
+    .product-meta a {
+      color: var(--muted);
+    }
+
+    .product-meta a:hover,
+    .product-meta a:focus-visible {
+      color: var(--accent);
     }
 
     .exp {
@@ -373,13 +505,57 @@
     </div>
   </header>
   <main id="main">
-    <section id="now" class="reveal" aria-labelledby="now-title">
+    <section id="products" class="reveal" aria-labelledby="products-title">
       <div class="layout">
-        <h2 id="now-title">Now</h2>
-        <p>
-          Building products that replace slow, manual processes — so businesses
-          save hours, cut errors, and grow without hiring just to keep up.
+        <h2 id="products-title">Products</h2>
+        <p class="products-intro">
+          Chrome extensions that cut busywork for trucking teams — book loads faster,
+          check brokers before you commit, and keep dispatch moving.
         </p>
+        <ul class="products">
+          <li>
+            <h3 class="product-name">
+              <a href="https://bestamazonbooker.lol" rel="noopener noreferrer">BestAmazonBooker</a>
+            </h3>
+            <p class="product-desc">
+              Missing Relay loads costs money. This Chrome extension searches, filters,
+              and books Amazon Relay loads from a widget on the load board.
+            </p>
+            <p class="product-meta">
+              <a href="https://bestamazonbooker.lol" rel="noopener noreferrer">bestamazonbooker.lol</a>
+              <span aria-hidden="true">·</span>
+              <a href="https://chromewebstore.google.com/detail/bestamazonbooker/cjalmfjcjhpkldndjifbhebecelpbemm" rel="noopener noreferrer">Chrome Web Store</a>
+            </p>
+          </li>
+          <li>
+            <h3 class="product-name">
+              <a href="https://factoright.com" rel="noopener noreferrer">FactoRight</a>
+            </h3>
+            <p class="product-desc">
+              Booking a bad broker risks unpaid loads. This Chrome extension shows
+              factoring scores on DAT and TruckStop so you can decide before you haul.
+            </p>
+            <p class="product-meta">
+              <a href="https://factoright.com" rel="noopener noreferrer">factoright.com</a>
+              <span aria-hidden="true">·</span>
+              <a href="https://chromewebstore.google.com/detail/factoright/abpkbnjbcjffhdfiibkeodpcejlfpcki" rel="noopener noreferrer">Chrome Web Store</a>
+            </p>
+          </li>
+          <li>
+            <h3 class="product-name">
+              <a href="https://locktheload.com" rel="noopener noreferrer">LockTheLoad</a>
+            </h3>
+            <p class="product-desc">
+              Load boards bury dispatchers in busywork. This Chrome extension helps you
+              negotiate, email, and book across DAT and TruckStop without the grind.
+            </p>
+            <p class="product-meta">
+              <a href="https://locktheload.com" rel="noopener noreferrer">locktheload.com</a>
+              <span aria-hidden="true">·</span>
+              <a href="https://chromewebstore.google.com/detail/locktheload-loads-booking/abfpabcljnjfonkbepfodpdembndjjnk" rel="noopener noreferrer">Chrome Web Store</a>
+            </p>
+          </li>
+        </ul>
       </div>
     </section>
     <section id="clients" class="reveal" aria-labelledby="clients-title">
