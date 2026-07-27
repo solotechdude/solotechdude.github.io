@@ -9,7 +9,7 @@ All content lives in `index.html`. Search for company names, email, or URLs to u
 - **Hero** — brand name, lede, and contact CTA
 - **Now** — current focus paragraph
 - **Selected experience** — company list (`JPMorgan Chase`, `FCC`, `Walmart Labs`, etc.)
-- **Contact** — `solotechdude@gmail.com` and GitHub link
+- **Contact** — `solotechdude@gmail.com` (hero CTA: Email me)
 
 No build step required.
 
