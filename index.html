@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>solotechdude</title>
   <meta name="description" content="solotechdude — solopreneur building tools for trucking, government contracting, and operators.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Syne:wght@600;700;800&display=swap">
   <style>
     :root {
@@ -197,6 +199,16 @@
       margin: 0 0 1.25rem;
     }
 
+    .mark {
+      display: block;
+      width: clamp(2.75rem, 9vw, 4.5rem);
+      aspect-ratio: 544 / 819;
+      margin: 0 0 1.5rem;
+      background-color: var(--ink);
+      -webkit-mask: url("logo.png") center / contain no-repeat;
+      mask: url("logo.png") center / contain no-repeat;
+    }
+
     .brand {
       font-family: Syne, sans-serif;
       /* Syne ExtraBold is very wide — size to ~1/12 of content width */
@@ -317,6 +329,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="hero reveal" aria-label="Intro">
     <div class="layout">
+      <span class="mark" role="img" aria-label="solotechdude mark"></span>
       <p class="label">Solopreneur · Builder</p>
       <h1 class="brand">solotechdude</h1>
       <p class="lede">
