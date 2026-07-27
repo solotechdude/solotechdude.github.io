@@ -2,20 +2,44 @@
 
 Single-page personal brand site for **solotechdude** — software and AI that cuts busywork.
 
+Live: **https://solotechdude.github.io**
+
+## Layout
+
+```
+.
+├── index.html              # Site (copy + styles + Chrome user counts)
+├── favicon.ico             # Tab icons (kept at root for browsers)
+├── favicon.png
+├── apple-touch-icon.png
+├── assets/
+│   └── brand/              # Logo mark used on the site
+│       ├── logo.svg
+│       ├── logo.png
+│       ├── logo-512.png
+│       └── favicon-32.png
+├── creatives/
+│   ├── x-headers/          # X / Twitter header exports (versioned)
+│   └── qr/                 # Business-card QR codes → this site
+└── docs/                   # Notes / plans (not deployed content)
+```
+
+Site-critical files stay at the repo root for GitHub Pages. Brand artwork and marketing exports live under `assets/` and `creatives/`.
+
 ## Edit copy
 
-All content lives in `index.html`. Search for company names, email, or URLs to update:
+All page content lives in `index.html`:
 
-- **Hero** — brand name, lede, and Email me CTA
+- **Hero** — brand name, lede, Email me CTA
 - **Products** — BestAmazonBooker, FactoRight, LockTheLoad (domains + Chrome Web Store)
 - **Clients** — contractor client list
 - **Contact** — `solotechdude@gmail.com`
 
-No build step required.
+Chrome Web Store **user counts** load from Shields.io at runtime (`data-chrome-id` on each product). No backend required.
+
+No build step.
 
 ## Local preview
-
-Open `index.html` directly in a browser, or serve the folder locally:
 
 ```bash
 python3 -m http.server
@@ -23,10 +47,6 @@ python3 -m http.server
 
 Then visit `http://localhost:8000`.
 
-## Deploy to GitHub Pages
+## Deploy
 
-1. Create a public repository named `solotechdude.github.io`.
-2. Push this project to the `main` branch (root of the repo).
-3. In GitHub: **Settings → Pages → Build and deployment → Deploy from branch `main` / `/ (root)`**.
-
-Live URL: **https://solotechdude.github.io**
+Push to `main` on `solotechdude/solotechdude.github.io`. Pages serves from the repo root.

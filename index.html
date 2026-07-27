@@ -450,6 +450,18 @@
       color: var(--accent);
     }
 
+    .product-users {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }
+
+    .product-users[hidden] {
+      display: none;
+    }
+
     .exp {
       list-style: none;
       margin: 0;
@@ -506,7 +518,7 @@
   <header class="hero reveal" aria-label="Intro">
     <div class="layout">
       <div class="mark" aria-hidden="true">
-        <img src="logo.svg" alt="" width="462" height="736">
+        <img src="assets/brand/logo.svg" alt="" width="462" height="736">
       </div>
       <p class="label">Solopreneur · Builder</p>
       <h1 class="brand">solotechdude</h1>
@@ -538,6 +550,10 @@
               <a href="https://bestamazonbooker.lol" rel="noopener noreferrer">bestamazonbooker.lol</a>
               <span aria-hidden="true">·</span>
               <a href="https://chromewebstore.google.com/detail/bestamazonbooker/cjalmfjcjhpkldndjifbhebecelpbemm" rel="noopener noreferrer">Chrome Web Store</a>
+              <span class="product-users" data-chrome-id="cjalmfjcjhpkldndjifbhebecelpbemm" hidden>
+                <span class="sep" aria-hidden="true">·</span>
+                <span class="count"></span>
+              </span>
             </p>
           </li>
           <li>
@@ -552,6 +568,10 @@
               <a href="https://factoright.com" rel="noopener noreferrer">factoright.com</a>
               <span aria-hidden="true">·</span>
               <a href="https://chromewebstore.google.com/detail/factoright/abpkbnjbcjffhdfiibkeodpcejlfpcki" rel="noopener noreferrer">Chrome Web Store</a>
+              <span class="product-users" data-chrome-id="abpkbnjbcjffhdfiibkeodpcejlfpcki" hidden>
+                <span class="sep" aria-hidden="true">·</span>
+                <span class="count"></span>
+              </span>
             </p>
           </li>
           <li>
@@ -566,6 +586,10 @@
               <a href="https://locktheload.com" rel="noopener noreferrer">locktheload.com</a>
               <span aria-hidden="true">·</span>
               <a href="https://chromewebstore.google.com/detail/locktheload-loads-booking/abfpabcljnjfonkbepfodpdembndjjnk" rel="noopener noreferrer">Chrome Web Store</a>
+              <span class="product-users" data-chrome-id="abfpabcljnjfonkbepfodpdembndjjnk" hidden>
+                <span class="sep" aria-hidden="true">·</span>
+                <span class="count"></span>
+              </span>
             </p>
           </li>
         </ul>
@@ -594,5 +618,33 @@
       </div>
     </section>
   </main>
+  <script>
+    (function () {
+      var nodes = document.querySelectorAll(".product-users[data-chrome-id]");
+      if (!nodes.length) return;
+
+      nodes.forEach(function (el) {
+        var id = el.getAttribute("data-chrome-id");
+        if (!id) return;
+
+        fetch("https://img.shields.io/chrome-web-store/users/" + id + ".json")
+          .then(function (res) {
+            if (!res.ok) throw new Error("badge fetch failed");
+            return res.json();
+          })
+          .then(function (data) {
+            var n = data && (data.message || data.value);
+            if (!n || n === "invalid" || n === "not found") return;
+            var count = el.querySelector(".count");
+            if (!count) return;
+            count.textContent = n + " users";
+            el.hidden = false;
+          })
+          .catch(function () {
+            /* keep count hidden if Shields is unavailable */
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
