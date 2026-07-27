@@ -13,6 +13,7 @@
       --muted: #8a9199;
       --accent: #3de0c5;
       --rule: rgba(242, 242, 240, 0.12);
+      --page-pad: clamp(0.75rem, 2vw, 1.25rem);
     }
 
     *,
@@ -176,7 +177,7 @@
     }
 
     .hero {
-      padding: min(20vh, 8rem) clamp(1.25rem, 5vw, 3rem);
+      padding: min(20vh, 8rem) var(--page-pad);
       border-bottom: 1px solid var(--rule);
       min-height: 100svh;
       display: flex;
@@ -198,15 +199,16 @@
 
     .brand {
       font-family: Syne, sans-serif;
-      /* Wide Syne + 13 glyphs: size ≈ container / 11 so the full word fits */
-      font-size: clamp(1.5rem, calc((100vw - 4rem) / 11), 7rem);
-      font-size: clamp(1.5rem, 8.8cqi, 7rem);
+      /* Syne ExtraBold is very wide — size to ~1/12 of content width */
+      font-size: min(7rem, calc((100vw - (2 * var(--page-pad))) / 12));
+      font-size: min(7rem, calc(100cqi / 12));
       line-height: 0.95;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.045em;
       color: var(--ink);
       font-weight: 800;
       margin: 0 0 1.75rem;
-      width: max-content;
+      display: block;
+      width: 100%;
       max-width: 100%;
       white-space: nowrap;
     }
@@ -224,7 +226,7 @@
     }
 
     main section {
-      padding: min(20vh, 8rem) clamp(1.25rem, 5vw, 3rem);
+      padding: min(20vh, 8rem) var(--page-pad);
       max-width: 100%;
       box-sizing: border-box;
     }
@@ -257,9 +259,11 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
       padding: 1.25rem 0;
       border-top: 1px solid var(--rule);
+      min-width: 0;
     }
 
     .exp li:last-child {
@@ -268,15 +272,18 @@
 
     .org {
       font-family: Syne, sans-serif;
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.15rem, 2.8vw, 2rem);
       font-weight: 700;
       letter-spacing: -0.02em;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .role {
       font-size: 0.9375rem;
       color: var(--muted);
       text-align: right;
+      flex: 0 0 auto;
     }
 
     .contact-links {
