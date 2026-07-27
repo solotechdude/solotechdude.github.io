@@ -198,18 +198,17 @@
 
     .brand {
       font-family: Syne, sans-serif;
-      /* Fit "solotechdude" to the layout width; floor low enough for 320px */
-      font-size: clamp(1.75rem, calc((100vw - 4rem) / 9.5), 8rem);
-      font-size: clamp(1.75rem, 10.2cqi, 8rem);
+      /* Wide Syne + 13 glyphs: size ≈ container / 11 so the full word fits */
+      font-size: clamp(1.5rem, calc((100vw - 4rem) / 11), 7rem);
+      font-size: clamp(1.5rem, 8.8cqi, 7rem);
       line-height: 0.95;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.04em;
       color: var(--ink);
       font-weight: 800;
       margin: 0 0 1.75rem;
+      width: max-content;
       max-width: 100%;
-      width: 100%;
       white-space: nowrap;
-      overflow: hidden;
     }
 
     .lede {
