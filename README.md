@@ -28,7 +28,7 @@ Site-critical files stay at the repo root for GitHub Pages. Marketing exports (`
 All page content lives in `index.html`:
 
 - **Hero** — brand name, lede, Email me CTA
-- **Products** — BestAmazonBooker, FactoRight, LockTheLoad (domains + Chrome Web Store)
+- **Products** — BestAmazonBooker, FactoRight, LockTheLoad, TubePack (domains + Chrome Web Store)
 - **Clients** — contractor client list
 - **Contact** — `solotechdude@gmail.com`
 
