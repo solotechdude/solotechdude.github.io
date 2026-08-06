@@ -4,3 +4,6 @@ Thumbs.db
 
 # Local-only marketing exports (not published with the site)
 creatives/
+
+# Local planning docs (not part of the site)
+docs/
