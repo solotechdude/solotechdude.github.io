@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>solotechdude</title>
-  <meta name="description" content="solotechdude builds software, AI, automations, and apps that cut busywork — including BestAmazonBooker, FactoRight, LockTheLoad, TubePack, TabMD, Unlimited Shortcuts, and X-Vault.">
+  <meta name="description" content="solotechdude runs two generative AI platform bets in freight and hospitality, with shipped Chrome extensions as the distribution wedge — including BestAmazonBooker, FactoRight, LockTheLoad, TubePack, TabMD, Unlimited Shortcuts, and X-Vault.">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCQ04971JK"></script>
   <script>
@@ -308,9 +308,10 @@
       }
 
       .hero { animation-delay: 0.05s; }
-      #products { animation-delay: 0.18s; }
-      #clients { animation-delay: 0.3s; }
-      #contact { animation-delay: 0.42s; }
+      #platforms { animation-delay: 0.14s; }
+      #products { animation-delay: 0.23s; }
+      #clients { animation-delay: 0.32s; }
+      #contact { animation-delay: 0.41s; }
 
       @keyframes rise {
         to { opacity: 1; transform: none; }
@@ -452,7 +453,14 @@
       box-sizing: border-box;
     }
 
-    main section h2 {
+    #platforms {
+      padding: min(20vh, 8rem) var(--page-pad);
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    main section h2,
+    #platforms h2 {
       font-family: Syne, sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
@@ -538,6 +546,23 @@
       display: none;
     }
 
+    .platform-status {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .group-label {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.5rem;
+    }
+
     .exp {
       list-style: none;
       margin: 0;
@@ -596,15 +621,33 @@
       <div class="mark" aria-hidden="true">
         <img src="assets/brand/logo.svg" alt="" width="462" height="736">
       </div>
-      <p class="label">Solopreneur · Builder</p>
+      <p class="label">Solopreneur · Operator</p>
       <h1 class="brand">solotechdude</h1>
       <p class="lede">
-        <span class="line">Busywork is stealing your team's time.</span>
-        <span class="line">I build software and AI <span class="line-end">that gets it done for you.</span></span>
+        <span class="line">Running two generative AI platform bets — freight and hospitality —</span>
+        <span class="line">with shipped products as the distribution wedge.</span>
       </p>
       <p class="cta"><a href="mailto:solotechdude@gmail.com">Email me</a></p>
     </div>
   </header>
+  <section id="platforms" class="reveal" aria-labelledby="platforms-title">
+    <div class="layout">
+      <h2 id="platforms-title">Platforms</h2>
+      <p class="products-intro">Advanced AI operations in private development. Briefings on request.</p>
+      <ul class="products">
+        <li>
+          <h3 class="product-name">Freight AI</h3>
+          <p class="product-desc">Generative AI built to disrupt trucking — an industry still running on phone calls and fax. Autonomous operations layer for carriers, dispatch, and freight networks.</p>
+          <p class="product-meta"><span class="platform-status">Private development</span></p>
+        </li>
+        <li>
+          <h3 class="product-name">Hostline</h3>
+          <p class="product-desc">Generative AI for hospitality — disrupting how venues run the visit. AI-native channel for in-venue operations and guest relationships.</p>
+          <p class="product-meta"><span class="platform-status">Private development</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
   <main id="main">
     <section id="products" class="reveal" aria-labelledby="products-title">
       <div class="layout">
