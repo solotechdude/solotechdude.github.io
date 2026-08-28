@@ -1,6 +1,6 @@
 # solotechdude
 
-Single-page personal brand site for **solotechdude** — software and AI that cuts busywork.
+Single-page personal brand site for **solotechdude** — dual-platform operator running generative AI bets in freight and hospitality, with shipped Chrome extensions as the distribution wedge.
 
 Live: **https://solotechdude.github.io**
 
@@ -27,12 +27,13 @@ Site-critical files stay at the repo root for GitHub Pages. Marketing exports (`
 
 All page content lives in `index.html`:
 
-- **Hero** — brand name, lede, Email me CTA
-- **Products** — BestAmazonBooker, FactoRight, LockTheLoad, TubePack, TabMD, Unlimited Shortcuts, X-Vault (domains + Chrome Web Store)
+- **Hero** — brand name, operator lede, Email me CTA
+- **Platforms** — Freight AI and Hostline (stealth; no public URLs)
+- **Shipped products** — Chrome extensions grouped under **Freight distribution** (BestAmazonBooker, FactoRight, LockTheLoad) and **General tools** (TubePack, TabMD, Unlimited Shortcuts, X-Vault); domains + Chrome Web Store links
 - **Clients** — contractor client list
 - **Contact** — `solotechdude@gmail.com`
 
-Chrome Web Store **user counts** load from Shields.io at runtime (`data-chrome-id` on each product). No backend required.
+Platform bets have no public URLs on this page. Chrome Web Store **user counts** load from Shields.io at runtime (`data-chrome-id` on each product). No backend required.
 
 No build step.
 

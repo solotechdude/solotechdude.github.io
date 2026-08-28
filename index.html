@@ -27,8 +27,8 @@
         "name": "solotechdude",
         "url": "https://solotechdude.github.io/",
         "email": "mailto:solotechdude@gmail.com",
-        "jobTitle": "Solopreneur",
-        "description": "solotechdude builds software, AI agents and models, automations, websites, web and mobile apps, and browser tools that cut busywork.",
+        "jobTitle": "Solopreneur · Operator",
+        "description": "solotechdude runs two generative AI platform bets in freight and hospitality, with shipped Chrome extensions as the distribution wedge.",
         "knowsAbout": [
           "software automation",
           "AI agents",
@@ -51,8 +51,35 @@
       },
       {
         "@type": "ItemList",
+        "@id": "https://solotechdude.github.io/#platforms",
+        "name": "Platforms by solotechdude",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Freight AI",
+              "applicationCategory": "BusinessApplication",
+              "description": "Generative AI built to disrupt trucking — an industry still running on phone calls and fax. Autonomous operations layer for carriers, dispatch, and freight networks."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Hostline",
+              "applicationCategory": "BusinessApplication",
+              "description": "Generative AI for hospitality — disrupting how venues run the visit. AI-native channel for in-venue operations and guest relationships."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
         "@id": "https://solotechdude.github.io/#products",
-        "name": "Products by solotechdude",
+        "name": "Shipped products by solotechdude",
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -563,6 +590,10 @@
       margin: 0 0 0.5rem;
     }
 
+    .products + .group-label {
+      margin-top: 2rem;
+    }
+
     .exp {
       list-style: none;
       margin: 0;
@@ -651,11 +682,9 @@
   <main id="main">
     <section id="products" class="reveal" aria-labelledby="products-title">
       <div class="layout">
-        <h2 id="products-title">Products</h2>
-        <p class="products-intro">
-          Software, AI, and automations that remove busywork — websites, web and mobile
-          apps, agents, models, and browser tools. A few live products below.
-        </p>
+        <h2 id="products-title">Shipped products</h2>
+        <p class="products-intro">Live Chrome extensions — distribution wedge and proof of execution.</p>
+        <p class="group-label">Freight distribution</p>
         <ul class="products">
           <li>
             <h3 class="product-name">
@@ -711,6 +740,9 @@
               </span>
             </p>
           </li>
+        </ul>
+        <p class="group-label">General tools</p>
+        <ul class="products">
           <li>
             <h3 class="product-name">
               <a href="https://tubepack.lol" rel="noopener noreferrer">TubePack</a>
